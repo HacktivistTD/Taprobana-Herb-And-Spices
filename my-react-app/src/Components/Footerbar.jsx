@@ -25,7 +25,7 @@ const Footerbar = () => {
         <a href="#" className="leftitems px-2"> T & C</a>
             <a href="#" className="leftitems px-2">Privacy Policy</a>
             <a href="#" className="leftitems px-2">Contact Us</a>
-            <a href="#" className="leftitems px-2">Careers </a>
+            <a href="#" className="leftitems px-2">Other Services </a>
            
 
         </div>
@@ -33,7 +33,7 @@ const Footerbar = () => {
              
           </nav>
         <div className="centeritems">
-          <p className="text-sm">&copy;  Copyright 2024 - Taprobana Cab Service.<br/>
+          <p className="text-sm">&copy;  Copyright 2024 - Taprobana Organic Spices.<br/>
                                  All rights reserved - Realistion: "HACKTIVIST"<br/>
                                  Using this website means you accept our terms and conditions. </p>
         

@@ -5,9 +5,10 @@ import Header from './Components/Header';
 import Contact from './Pages/Contact';
 import About from './Pages/About';
 import Home from './Pages/Home';
-import Tours from './Pages/Tours';
+import Spice from './Pages/Spice';
 import Login from './Pages/Login';
-import Fleets from './Pages/Fleets';
+import Herb from './Pages/Herb';
+import Teas from './Pages/Teas';
 import Stay from './Pages/Stay';
 import  Application  from './Pages/Application';
 import Footerbar from './Components/Footerbar';
@@ -25,9 +26,10 @@ const App = () => {
         <Route path="/" element={<Home/>} />
         <Route path="/contact" element={<Contact/>} />
         <Route path="/about" element={<About/>} />
-        <Route path="/tours" element={<Tours/>} />
+        <Route path="/spice" element={<Spice/>} />
+        <Route path="/teas" element={<Teas/>} />
         <Route path="/stay" element={<Stay/>} />
-        <Route path="/fleet" element={<Fleets/>} />
+        <Route path="/herb" element={<Herb/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/application" element={<Application/>}/>
         
