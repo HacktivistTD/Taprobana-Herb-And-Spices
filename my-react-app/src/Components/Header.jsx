@@ -2,6 +2,8 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import Taprobana from '../Images/Taprobana.png';
 
 function Header() {
@@ -28,6 +30,9 @@ function Header() {
           </Nav>
           <Nav>
             <Nav.Link href="/login" className='navitems px-3' style={{ color: 'black', fontWeight: 'bold' }}>Login</Nav.Link>
+            <Nav.Link href="/cart" className='navitems px-3' style={{ color: 'black', fontWeight: 'bold' }}>
+              <FontAwesomeIcon icon={faShoppingCart} />
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

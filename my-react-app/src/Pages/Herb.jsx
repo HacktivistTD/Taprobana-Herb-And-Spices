@@ -1,13 +1,11 @@
-
 const products = [
   {
     id: 1,
-    name: 'BUDGET CARS',
+    name: 'Moringa Leaves',
     href: '#',
-    imageSrc: 'https://reviewsrilanka.com/wp-content/uploads/2023/08/micro_panda.jpg',
-    imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
-    color: 'Black',
+    imageSrc: 'https://www.ahealthyleaf.com/wp-content/uploads/2015/10/2015-11-09-at-17-48-39.jpg',
+    imageAlt: "Moringa Leaves",
+   
   },
   {
     id: 1,
@@ -15,8 +13,7 @@ const products = [
     href: '#',
     imageSrc: 'https://www.financialexpress.com/wp-content/uploads/2019/04/WhatsApp-Image-2019-04-12-at-11.44.21-AM-1.jpeg?w=480',
     imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
-    color: 'Black',
+   
   },
   {
     id: 1,
@@ -24,8 +21,7 @@ const products = [
     href: '#',
     imageSrc: 'https://global.toyota/pages/news/images/2021/07/19/1330/20210719_04_01_s.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
-    color: 'Black',
+   
   },
   {
     id: 1,
@@ -33,8 +29,7 @@ const products = [
     href: '#',
     imageSrc: 'https://stimg.cardekho.com/images/carexteriorimages/930x620/Toyota/Toyota-Prius-2009-2016/1057/1563272072834/front-left-side-47.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
-    color: 'Black',
+    
   },
   {
     id: 1,
@@ -42,8 +37,7 @@ const products = [
     href: '#',
     imageSrc: 'https://img.indianautosblog.com/2015/02/2015-Every-front-three-quarter-Japan.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
-    color: 'Black',
+  
   },
   {
     id: 1,
@@ -51,8 +45,7 @@ const products = [
     href: '#',
     imageSrc: 'https://demo.rapidgro.lk/transtravelslanka.com/wp-content/uploads/2018/06/7.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
-    color: 'Black',
+  
   },
   {
     id: 1,
@@ -60,8 +53,7 @@ const products = [
     href: '#',
     imageSrc: 'https://holidaylankatours.com/x/cdn/?https://storage.googleapis.com/wzukusers/user-18185838/images/24b23474cf4d4f5a82883bd1c079c208/httpswww.holidaylankatours.comtoyota-coaster.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
-    color: 'Black',
+    
   }, 
   {
     id: 1,
@@ -69,10 +61,9 @@ const products = [
     href: '#',
     imageSrc: 'https://i.pinimg.com/originals/c0/00/9a/c0009a1a97e080bb0460a441a93f468b.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
-    color: 'Black',
+   
   },
-  // More products...
+  
 ]
 
 export default function Herb() {
