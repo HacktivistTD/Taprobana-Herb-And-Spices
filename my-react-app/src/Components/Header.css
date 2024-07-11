@@ -1,0 +1,20 @@
+.navigatinbarcont {
+    background-color: #f8e808;  /* Bootstrap's light background color */
+  }
+ 
+  .navitems {
+    font-weight: bold;  /* Makes text bold */
+    display: flex;     /* Ensures items are laid out horizontally */
+    flex-direction: column;  /* Stacks items vertically by default */
+  
+    @media (min-width: 768px) {  /* Adjusts layout for medium screens and above */
+      flex-direction: row;  /* Makes items horizontal on medium screens */
+      items-center: center;  /* Aligns items vertically in the center */
+    }
+  }
+  .loginalign {
+    display: flex;  /* Ensure the container can hold items horizontally */
+    justify-content: flex-end;  /* Aligns items to the right edge */
+    
+  }
+  
