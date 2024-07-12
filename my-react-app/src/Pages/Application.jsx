@@ -5,6 +5,7 @@ import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } f
 import { useNavigate } from 'react-router-dom';
 import { auth } from './firebase'; // Import the Firebase auth module
 import Taprobana from '../Images/Taprobana.png';
+import opacity from '../Images/opacity.png';
 
 function Application() {
   // State to store form data and errors
@@ -69,7 +70,7 @@ function Application() {
     <div className="relative flex items-center justify-center min-h-screen">
       {/* Background Image */}
       <img
-        src="https://img.freepik.com/free-photo/taxi-sign-blurred-city-night-background_181624-17989.jpg?t=st=1719685755~exp=1719689355~hmac=69608b4d1f909f05d988cd657ac03e3e5cbabd3cd2d47f50bd83706261385951&w=1060"
+        src={opacity}
         alt=""
         className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center"
       />
