@@ -1,3 +1,4 @@
+// src/Components/Header.jsx
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -5,6 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import Taprobana from '../Images/Taprobana.png';
+import ErrorBoundary from './ErrorBoundary';
 
 function Header() {
   return (
@@ -17,7 +19,7 @@ function Header() {
             alt="TAPROBANA TAXI"
           />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />  {/* Toggle button for mobile responsiveness */}
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto text-center">
             <Nav.Link href="/" className='navitems px-3' style={{ color: 'black', fontWeight: 'bold' }}>Home</Nav.Link>
@@ -27,12 +29,13 @@ function Header() {
             <Nav.Link href="/herb" className='navitems px-3' style={{ color: 'black', fontWeight: 'bold' }}>Herbs</Nav.Link>
             <Nav.Link href="/teas" className='navitems px-3' style={{ color: 'black', fontWeight: 'bold' }}>Teas</Nav.Link>
             <Nav.Link href="/stay" className='navitems px-3' style={{ color: 'black', fontWeight: 'bold' }}>Stay Home</Nav.Link>
+            <Nav.Link href="/dashboard" className='navitems px-3' style={{ color: 'black', fontWeight: 'bold' }}>Dashboard</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link href="/login" className='navitems px-3' style={{ color: 'black', fontWeight: 'bold' }}>Login</Nav.Link>
             <Nav.Link href="/cart" className='navitems px-3' style={{ color: 'black', fontWeight: 'bold' }}>
               <FontAwesomeIcon icon={faShoppingCart} />
             </Nav.Link>
+            <Nav.Link href="/login" className='navitems px-3' style={{ color: 'black', fontWeight: 'bold' }}>Login</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -40,4 +43,10 @@ function Header() {
   );
 }
 
-export default Header;
+export default function App() {
+  return (
+    <ErrorBoundary>
+      <Header />
+    </ErrorBoundary>
+  );
+}

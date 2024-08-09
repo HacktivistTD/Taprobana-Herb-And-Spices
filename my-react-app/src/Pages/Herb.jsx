@@ -9,61 +9,92 @@ const products = [
   },
   {
     id: 1,
-    name: 'MINI CARS',
+    name: 'Ranawara Flowers',
     href: '#',
-    imageSrc: 'https://www.financialexpress.com/wp-content/uploads/2019/04/WhatsApp-Image-2019-04-12-at-11.44.21-AM-1.jpeg?w=480',
+    imageSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7n9FeXDr4s4nOxFqhZh5-TEKfHaBeAMQqdA&usqp=CAU',
     imageAlt: "Front of men's Basic Tee in black.",
    
   },
   {
     id: 1,
-    name: 'HATCH BACK',
+    name: 'Thebu Leaves',
     href: '#',
-    imageSrc: 'https://global.toyota/pages/news/images/2021/07/19/1330/20210719_04_01_s.jpg',
+    imageSrc: 'https://i.etsystatic.com/27476817/r/il/1e1806/3968608167/il_fullxfull.3968608167_lne3.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
    
   },
   {
     id: 1,
-    name: 'SEDAN CARS',
+    name: 'Blue Lotus',
     href: '#',
-    imageSrc: 'https://stimg.cardekho.com/images/carexteriorimages/930x620/Toyota/Toyota-Prius-2009-2016/1057/1563272072834/front-left-side-47.jpg',
+    imageSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAJDhtr8VDKeOnpMUSU321jasGJBHs2GGYsT7U0xbUu8r77Gi5vXkkAUoHQxDhp4jsyTw&usqp=CAU',
     imageAlt: "Front of men's Basic Tee in black.",
     
   },
   {
     id: 1,
-    name: 'MINI VAN',
+    name: 'Lemongrass',
     href: '#',
-    imageSrc: 'https://img.indianautosblog.com/2015/02/2015-Every-front-three-quarter-Japan.jpg',
+    imageSrc: 'https://cdn11.bigcommerce.com/s-ti8ztxg4ry/images/stencil/1500x1500/products/3066/2246/lemon_grass_-003_SS-2022__75874.1654191092.jpg?c=1&imbypass=on',
     imageAlt: "Front of men's Basic Tee in black.",
   
   },
   {
     id: 1,
-    name: 'VAN',
+    name: 'Curry Leaves',
     href: '#',
-    imageSrc: 'https://demo.rapidgro.lk/transtravelslanka.com/wp-content/uploads/2018/06/7.jpg',
+    imageSrc: 'https://shemins.scdn2.secure.raxcdn.com/wp-content/uploads/2022/02/Shemins-Curry-Leaves.png',
     imageAlt: "Front of men's Basic Tee in black.",
   
   },
   {
     id: 1,
-    name: 'MINI BUS',
+    name: 'Pandan Leaves',
     href: '#',
-    imageSrc: 'https://holidaylankatours.com/x/cdn/?https://storage.googleapis.com/wzukusers/user-18185838/images/24b23474cf4d4f5a82883bd1c079c208/httpswww.holidaylankatours.comtoyota-coaster.jpg',
+    imageSrc: 'https://post.healthline.com/wp-content/uploads/2020/10/pandan-1296x728-header.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
     
   }, 
   {
     id: 1,
-    name: 'BUS',
+    name: 'Ashwagandha Roots',
     href: '#',
-    imageSrc: 'https://i.pinimg.com/originals/c0/00/9a/c0009a1a97e080bb0460a441a93f468b.jpg',
+    imageSrc: 'https://5.imimg.com/data5/SELLER/Default/2023/6/312593922/BH/TS/DH/106380610/taar-ashwagandha-roots-500x500.jpg',
+    imageAlt: "Front of men's Basic Tee in black.",
+   
+  },
+
+  
+
+
+  {
+    id: 1,
+    name: 'Hibiscus Flowers',
+    href: '#',
+    imageSrc: 'https://www.planetnatural.com/wp-content/uploads/2024/02/Hibiscus.jpg',
+    imageAlt: "Front of men's Basic Tee in black.",
+   
+  },
+  {
+    id: 1,
+    name: 'Dried Rose  Flowers',
+    href: '#',
+    imageSrc: 'https://elsieorganics.com/wp-content/uploads/2021/03/rose-buds-dried-rose-flower-buds.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
    
   },
   
+  
+  {
+    id: 1,
+    name: 'Dried Godapara',
+    href: '#',
+    imageSrc: 'https://www.ceylone.lk/wp-content/uploads/2022/07/119746014_782180462531962_1830692659578860099_n.jpg',
+    imageAlt: "Front of men's Basic Tee in black.",
+   
+  },
+
+
 ]
 
 export default function Herb() {
@@ -71,7 +102,7 @@ export default function Herb() {
     <div className="bg-white">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <h2 className="text-2xl font-bold tracking-tight text-gray-900 text-center">
-        Browse Our Limos
+        Browse Our Herbs
           </h2>
 
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 font-bold text-center">
