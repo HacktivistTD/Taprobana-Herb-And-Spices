@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { db } from './firebase';
+import { db, storage } from './firebase'; // Import storage if using Firebase Storage
 import { collection, addDoc } from 'firebase/firestore';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import toastr from 'toastr';
 import 'toastr/build/toastr.min.css';
 
@@ -12,6 +13,7 @@ const Dashboard = () => {
   });
 
   const [quantities, setQuantities] = useState([{ quantity: '', price: '', qty: '' }]);
+  const [images, setImages] = useState([]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,6 +21,10 @@ const Dashboard = () => {
       ...formData,
       [name]: value
     });
+  };
+
+  const handleImageChange = (e) => {
+    setImages([...e.target.files]);
   };
 
   const handleQuantityChange = (index, e) => {
@@ -37,9 +43,21 @@ const Dashboard = () => {
     setQuantities(newQuantities);
   };
 
+  const uploadImages = async () => {
+    const imageUrls = await Promise.all(
+      images.map(async (image) => {
+        const imageRef = ref(storage, `products/${image.name}`);
+        const snapshot = await uploadBytes(imageRef, image);
+        return getDownloadURL(snapshot.ref);
+      })
+    );
+    return imageUrls;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      const imageUrls = await uploadImages();
       await addDoc(collection(db, 'products'), {
         title: formData.title,
         category: formData.category,
@@ -48,7 +66,8 @@ const Dashboard = () => {
           quantity: q.quantity,
           price: q.price,
           qty: q.qty
-        }))
+        })),
+        images: imageUrls
       });
       toastr.success('Product added successfully!');
       setFormData({
@@ -57,13 +76,14 @@ const Dashboard = () => {
         description: ''
       });
       setQuantities([{ quantity: '', price: '', qty: '' }]);
+      setImages([]);
     } catch (error) {
       toastr.error('Error adding product: ' + error.message);
     }
   };
 
   return (
-    <div style={{ maxWidth: '600px', margin: '0 auto', padding: '20px', border: '1px solid #ccc', borderRadius: '10px', backgroundColor: '#f9f9f9', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+    <div style={{ maxWidth: '750px', margin: '0 auto', padding: '20px', border: '1px solid #ccc', borderRadius: '10px', backgroundColor: '#f9f9f9', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
       <h2 style={{ textAlign: 'center', marginBottom: '20px', color: '#333' }}>Add Product</h2>
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
         <div style={{ marginBottom: '15px' }}>
@@ -96,6 +116,15 @@ const Dashboard = () => {
             onChange={handleChange}
             required
             style={{ width: '100%', padding: '10px', borderRadius: '5px', border: '1px solid #ccc', fontSize: '16px', height: '100px' }}
+          />
+        </div>
+        <div style={{ marginBottom: '15px' }}>
+          <label style={{ marginBottom: '5px', color: '#555', fontWeight: 'bold' }}>Images:</label>
+          <input
+            type="file"
+            onChange={handleImageChange}
+            multiple
+            style={{ width: '100%', padding: '10px', borderRadius: '5px', border: '1px solid #ccc', fontSize: '16px' }}
           />
         </div>
         <div style={{ marginBottom: '15px' }}>
