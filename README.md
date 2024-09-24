@@ -1,2 +1,2 @@
 # Taprobana-herb-and-spices
-react base font end and Mongodb backend
+react base font end and Firebase backend
