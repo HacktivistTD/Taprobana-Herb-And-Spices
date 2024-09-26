@@ -32,8 +32,6 @@ const products = [
   // Add remaining products here...
 ];
 
-
-
 const Teas = () => {
   return (
     <div className="bg-white">

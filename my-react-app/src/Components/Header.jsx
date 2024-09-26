@@ -58,9 +58,9 @@ export default function Header() {
   return (
     <Disclosure as="nav" className="bg-gray-800">
       <div className="mx-auto max-w-8xl px-2 sm:px-6 lg:px-8">
-        <div className="relative flex h-16 items-center justify-between">
+        <div className="relative flex h-20 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            <Disclosure.Button className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+            <Disclosure.Button className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-green focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
               <span className="absolute -inset-0.5" />
               <span className="sr-only">Open main menu</span>
               <Bars3Icon aria-hidden="true" className="block h-6 w-6 group-data-[open]:hidden" />
@@ -92,7 +92,7 @@ export default function Header() {
               className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
             >
               <span className="sr-only">View notifications</span>
-              <BellIcon aria-hidden="true" className="h-6 w-6" />
+              <BellIcon aria-hidden="true" className="h-6 w-6 hover:text-[#1bbd61]" />
             </button>
 
             {isLoggedIn ? (
@@ -173,7 +173,7 @@ export default function Header() {
             </Disclosure.Button>
           ))}
           <Link to="/cart" className="flex items-center">
-            <TiShoppingCart className="h-6 w-6 text-gray-300" />
+            <TiShoppingCart className="h-6 w-6 text-gray-500 hover:text-[#1bbd61]" />
             <span className="ml-2 text-gray-300">Cart</span>
           </Link>
         </div>

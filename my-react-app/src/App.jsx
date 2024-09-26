@@ -9,6 +9,10 @@ import Footerbar from './Components/Footerbar';
 import Cat from './Pages/Cat';
 import Login from './Pages/Login'
 import Application from './Pages/Application';
+import View from './Pages/View';
+import Teas from './Pages/Teas';
+
+
 
 const App = () => {
   return (
@@ -23,6 +27,9 @@ const App = () => {
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login/>}/>
           <Route path="/application" element={<Application/>}/>
+          <Route path="/category/:category" element={<View />} />
+          <Route path="/category/tea-and-infusion" element={<Teas />} />
+
         </Routes>
         <Footerbar />
       </div>

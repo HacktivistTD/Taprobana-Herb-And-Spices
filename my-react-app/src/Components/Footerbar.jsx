@@ -13,9 +13,9 @@ const Footerbar = () => {
         <nav className="flex flex-wrap justify-center md:justify-start text-white ">
           <a href="#" className=" px-2 hover:text-[#1bbd61] ">T & C</a>
           <a href="#" className=" px-2  hover:text-[#1bbd61]">Privacy Policy</a>
-          <a href="#" className=" px-2  hover:text-[#1bbd61]">Contact Us</a>
+          <a href="/contact" className=" px-2  hover:text-[#1bbd61]">Contact Us</a>
           <a href="#" className=" px-2  hover:text-[#1bbd61]">Careers</a>
-          <a href="#" className=" px-2  hover:text-[#1bbd61]">About Us</a>
+          <a href="/about" className=" px-2  hover:text-[#1bbd61]">About Us</a>
         </nav>
 
         <div className="text-center font-bold mt-4 md:mt-0" style={{ color: '#1bbd61' }}>
