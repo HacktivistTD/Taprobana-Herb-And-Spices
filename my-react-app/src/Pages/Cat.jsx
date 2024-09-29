@@ -2,9 +2,10 @@ import { useParams, useNavigate } from 'react-router-dom';
 
 // Fashion Image Import Section
 import frock from '../Images/Fashion/frock.jpg';
-import heels from '../Images/Fashion/heels.jpg';
+import heel from '../Images/Fashion/heel.png';
 import trousers from '../Images/Fashion/trousers.jpg';
 import blouse from '../Images/Fashion/blouse.jpg';
+
 
 // Home and Garden Image Import Section
 import gardening from '../Images/Home and Garden/gardening.jpg';
@@ -39,7 +40,7 @@ const categories = {
     { name: 'Frock', description: 'Stylish dresses', imageSrc: frock  , link:'frock'},
     { name: 'Blouse', description: 'Elegant tops', imageSrc: blouse , link:'blouse'},
     { name: 'Trousers', description: 'Comfortable pants', imageSrc: trousers , link:'trousers'},
-    { name: 'Slippers and Heels', description: 'Stylish footwear', imageSrc: heels , link:'slippers-heels'},
+    { name: 'Slippers and Heels', description: 'Stylish footwear', imageSrc: heel , link:'slippers-heels'},
   ],
 };
 

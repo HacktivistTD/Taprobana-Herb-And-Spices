@@ -1,11 +1,15 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faYoutube, faWhatsapp, faInstagram, faFacebook, faTiktok, faAppStore, faGooglePlay } from '@fortawesome/free-brands-svg-icons';
 
+
+
 const Footerbar = () => {
   return (
     <footer className="bg-gray-800 text-black py-6 px-4">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <div className="flex items-center text-white ">
+        
+
         <FontAwesomeIcon icon={faAppStore} size="xl" className="px-3 cursor-pointer transition-colors duration-200 hover:text-[#1bbd61]" />
         <FontAwesomeIcon icon={faGooglePlay} size="xl" className="px-3 cursor-pointer transition-colors duration-200 hover:text-[#1bbd61]" />
       </div>

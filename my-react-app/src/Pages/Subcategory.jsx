@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { teas, spices,decor,tools,frock,blouse,trousers,slippers ,belt} from './data'; // Assuming these are imported from data.jsx
+import { teas, spices,decor,tools,frock,blouse,trousers,slippers ,belt} from './Data'; // Assuming these are imported from data.jsx
 
 export default function Subcategory() {
   const { subcategory } = useParams(); // Get the subcategory (teas, spices, etc.) from the URL

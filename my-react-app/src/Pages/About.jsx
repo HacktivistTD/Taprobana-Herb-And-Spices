@@ -1,4 +1,5 @@
 import farmer from '../Images/farmer.jpg';
+import usdao from '../Images/usdao.png';
 import { FaMapLocationDot } from "react-icons/fa6";
 export default function About() {
   return (
@@ -62,7 +63,7 @@ export default function About() {
               <div className="flex flex-1 items-center [container-type:inline-size] max-lg:py-6 lg:pb-2">
                 <img
                   className="h-[min(152px,40cqw)] object-cover object-center"
-                  src="https://tailwindui.com/plus/img/component-images/bento-03-security.png"
+                  src={usdao}
                   alt=""
                 />
               </div>
