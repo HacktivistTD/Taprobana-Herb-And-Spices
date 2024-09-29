@@ -18,35 +18,34 @@ import toy from '../Images/Pet/toy.jpg';
 import food from '../Images/Pet/food.jpg';
 import medicine from '../Images/Pet/medicine.jpg';
 
-// Pet Supply Section
+// Define teas and spices separately for subcategories
+
+
+// Category data
 const categories = {
   'pet-supplies': [
     { name: 'Pet Food', description: 'Healthy food for pets', imageSrc: food },
     { name: 'Pet Medicine', description: 'Medicine for pets', imageSrc: medicine },
     { name: 'Pet Toys', description: 'Fun toys for pets', imageSrc: toy },
-    { name: 'Dog Belt', description: 'Durable and comfortable belts designed for walking and controlling your dog.', imageSrc: belt },
+    { name: 'Dog Belt', description: 'Durable belts', imageSrc: belt ,link:'dog-belt' },
   ],
-
-  // Home and Garden
   'home-and-garden': [
-    { name: 'Garden Tools', description: 'Tools for home gardening', imageSrc: gardening },
-    { name: 'Tea and Infusion', description: 'A variety of teas and herbal infusions for relaxation and wellness.', imageSrc: tea, link: 'tea-and-infusion' },
-    { name: 'Herbs and Spices', description: 'A collection of aromatic herbs and spices to enhance flavor and health benefits in cooking.', imageSrc: herb },
-    { name: 'Home Decor', description: 'Beautiful home decor items', imageSrc: decor, link: 'home-decor' },
+    { name: 'Garden Tools', description: 'Tools for gardening', imageSrc: gardening , link:'garden-tools' },
+    { name: 'Tea and Infusion', description: 'Variety of teas', imageSrc: tea, link: 'teas' },
+    { name: 'Herbs and Spices', description: 'Aromatic herbs', imageSrc: herb, link: 'spices' },
+    { name: 'Home Decor', description: 'Beautiful decor', imageSrc: decor, link: 'home-decoration' },
   ],
-  
-  // Fashion Section
   'fashion': [
-    { name: 'Frock', description: 'Stylish and comfortable dresses suitable for various occasions.', imageSrc: frock },
-    { name: 'Blouse', description: 'Elegant and versatile tops perfect for casual or formal wear.', imageSrc: blouse },
-    { name: 'Trousers', description: 'Comfortable and stylish pants suitable for both casual and formal occasions.', imageSrc: trousers },
-    { name: 'Slippers and Heels', description: 'Comfortable slippers for everyday wear and stylish heels for special occasions.', imageSrc: heels },
+    { name: 'Frock', description: 'Stylish dresses', imageSrc: frock  , link:'frock'},
+    { name: 'Blouse', description: 'Elegant tops', imageSrc: blouse , link:'blouse'},
+    { name: 'Trousers', description: 'Comfortable pants', imageSrc: trousers , link:'trousers'},
+    { name: 'Slippers and Heels', description: 'Stylish footwear', imageSrc: heels , link:'slippers-heels'},
   ],
 };
 
 export default function Cat() {
   const { category } = useParams();
-  const navigate = useNavigate(); // To handle navigation
+  const navigate = useNavigate();
   const items = categories[category] || [];
 
   if (!items.length) {
@@ -60,28 +59,26 @@ export default function Cat() {
 
   const handleItemClick = (item) => {
     if (item.link) {
-      navigate(`/category/${item.link}`);
+      navigate(`/Subcategory/${item.link}`); 
     }
   };
 
   return (
-    <>
-      <div className="container mx-auto py-8">
-        <h1 className="text-2xl font-bold text-center capitalize">{category.replace('-', ' ')}</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
-          {items.map((item) => (
-            <div
-              key={item.name}
-              className="p-4 border rounded-md transition duration-300 transform hover:bg-gray-100 hover:shadow-lg hover:scale-105 cursor-pointer"
-              onClick={() => handleItemClick(item)}
-            >
-              <img src={item.imageSrc} alt={item.name} className="w-full h-75 object-cover" />
-              <h2 className="text-xl mt-2 text-center font-bold">{item.name.replace('-', ' ')}</h2>
-              <p className="text-gray-500 text-center">{item.description}</p>
-            </div>
-          ))}
-        </div>
+    <div className="container mx-auto py-8">
+      <h1 className="text-2xl font-bold text-center capitalize">{category.replace('-', ' ')}</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
+        {items.map((item) => (
+          <div
+            key={item.name}
+            className="p-4 border rounded-md transition duration-300 transform hover:bg-gray-100 hover:shadow-lg hover:scale-105 cursor-pointer"
+            onClick={() => handleItemClick(item)}
+          >
+            <img src={item.imageSrc} alt={item.name} className="w-full h-75 object-cover" />
+            <h2 className="text-xl mt-2 text-center font-bold">{item.name.replace('-', ' ')}</h2>
+            <p className="text-gray-500 text-center">{item.description}</p>
+          </div>
+        ))}
       </div>
-    </>
+    </div>
   );
 }

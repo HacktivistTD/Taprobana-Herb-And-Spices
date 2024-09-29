@@ -7,10 +7,10 @@ import Home from './Pages/Home';
 import Cart from './Pages/Cart';
 import Footerbar from './Components/Footerbar';
 import Cat from './Pages/Cat';
-import Login from './Pages/Login'
+import Login from './Pages/Login';
 import Application from './Pages/Application';
-import View from './Pages/View';
-import Teas from './Pages/Teas';
+import Subcategory from './Pages/Subcategory';
+import Privacy from './Pages/Privacy';
 
 
 
@@ -27,8 +27,11 @@ const App = () => {
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login/>}/>
           <Route path="/application" element={<Application/>}/>
-          <Route path="/category/:category" element={<View />} />
-          <Route path="/category/tea-and-infusion" element={<Teas />} />
+          
+        
+          <Route path="/privacy" element={<Privacy/>}/>
+          <Route path="/Subcategory/:subcategory" element={<Subcategory />} />
+
 
         </Routes>
         <Footerbar />
