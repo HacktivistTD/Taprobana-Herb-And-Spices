@@ -8,7 +8,7 @@ const HeroSection = () => {
         <span className="block mb-4 text-xs md:text-sm text-green-700 font-medium">
         Why do we use the name' Taprobana’?
         </span>
-        <h3 className="text-4xl md:text-6xl font-semibold">
+        <h3 className="text-4xl md:text-6xl font-semibold text-green-900">
         TAPROBANA
         </h3>
         <p className="text-base md:text-lg text-slate-700 my-4 md:my-6">
@@ -16,7 +16,7 @@ const HeroSection = () => {
         as a result of that sri lanka was known as the Easter spice granary.
         to reminiscence the proud history of our spice story we will carry on our name as the tharperobbins.
         </p>
-        <button className="bg-gray-500 text-white font-medium py-2 px-4 rounded transition-all hover:bg-gray-600 active:scale-95">
+        <button className="bg-gray-800 text-green-600 font-medium py-2 px-4 rounded transition-all hover:bg-gray-600 active:scale-95">
           For More Details. 
         </button>
       </div>

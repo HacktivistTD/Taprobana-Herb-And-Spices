@@ -12,6 +12,7 @@ const navigation = [
   { name: 'Pet Supplies', href: '/category/pet-supplies' },
   { name: 'Home And Garden', href: '/category/home-and-garden' },
   { name: 'Fashion Style', href: '/category/fashion' },
+  
  
 ];
 

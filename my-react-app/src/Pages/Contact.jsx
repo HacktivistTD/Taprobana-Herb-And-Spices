@@ -1,4 +1,6 @@
 import { CalendarDaysIcon, HandRaisedIcon } from '@heroicons/react/24/outline'
+import wing from  '../Images/wing.png';
+
 const links = [
   { name: 'Whatsapp', href: '#' },
   { name: 'Email', href: '#' },
@@ -19,7 +21,7 @@ export default function Contact() {
   return (
     <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
       <img
-        src="https://img.freepik.com/free-photo/selective-focus-shot-yellow-taxi-sign-traffic-jam_181624-42635.jpg?t=st=1719818672~exp=1719822272~hmac=b30b551b5258c66b9a86e067721a05a2ea53b38986281ba4fd7242d6cfd11070&w=1060"
+        src={wing}
         alt=""
         className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center"
       />
