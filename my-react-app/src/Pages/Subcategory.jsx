@@ -29,6 +29,7 @@ export default function Subcategory() {
       <h1 className="text-2xl font-bold text-center capitalize">{subcategory.replace('-', ' ')}</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
         {items.map((item) => (
+          
           <div key={item.id} className="p-4 border rounded-md border rounded-md transition duration-300 transform hover:bg-gray-100 hover:shadow-lg hover:scale-105 cursor-pointer">
             <img src={item.imageSrc} alt={item.name} className="w-100  object-cover" />
             <h2 className="text-xl mt-2 text-center font-bold">{item.name}</h2>

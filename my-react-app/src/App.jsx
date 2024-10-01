@@ -11,7 +11,7 @@ import Login from './Pages/Login';
 import Application from './Pages/Application';
 import Subcategory from './Pages/Subcategory';
 import Privacy from './Pages/Privacy';
-
+import Product from './Pages/Product';
 
 
 const App = () => {
@@ -28,7 +28,7 @@ const App = () => {
           <Route path="/login" element={<Login/>}/>
           <Route path="/application" element={<Application/>}/>
           
-        
+          <Route path='/product' element={<Product/>}/>
           <Route path="/privacy" element={<Privacy/>}/>
           <Route path="/Subcategory/:subcategory" element={<Subcategory />} />
 

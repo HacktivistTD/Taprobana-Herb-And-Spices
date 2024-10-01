@@ -19,7 +19,7 @@ const stats = [
 
 export default function Contact() {
   return (
-    <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
+    <div className="relative isolate overflow-hidden bg-gray-600 py-24 sm:py-32">
       <img
         src={wing}
         alt=""

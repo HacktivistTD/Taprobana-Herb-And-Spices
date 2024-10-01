@@ -1,66 +1,107 @@
-import React ,{useState,useContext,useEffect}from 'react'
-import { useParams } from 'react-router-dom' 
-import { ShopContext } from '../context/shopContext';
-import { assets } from '/assets/assets';
+import React, { useState } from 'react';
 
 const Product = () => {
+  const [selectedImage, setSelectedImage] = useState('/path-to-image1.jpg');
+  const [selectedColor, setSelectedColor] = useState('black');
 
-  const {productId} = useParams();
-  const {products} = useContext(ShopContext);
-  const [productData, setProductData] = useState(false);
-  const [image, setImage] = useState('');
+  const product = {
+    title: 'Zip Tote Basket',
+    price: 140,
+    description:
+      'The Zip Tote Basket is the perfect midpoint between shopping tote and comfy backpack. With convertible straps, you can hand carry, should sling, or backpack this convenient and spacious bag. The zip top and durable canvas construction keeps your goods protected for all-day use.',
+    images: [
+      '/path-to-image1.jpg',
+      '/path-to-image2.jpg',
+      '/path-to-image3.jpg',
+      '/path-to-image4.jpg',
+    ],
+    colors: ['black', 'white', 'gray'],
+  };
 
-  const fetchProductData = async () =>{
-    products.map((item)=>{
-      if(item._id === productId){
-        setProductData(item)
-        setImage(item.image[0])
-        console.log(item);
-        return null;
-      }
-    })
-  }
+  return (
+    <div className="flex flex-col lg:flex-row gap-8 p-8">
+      {/* Left Section: Image Gallery */}
+      <div className="flex flex-col gap-4 w-full lg:w-1/2">
+        <img
+          src={selectedImage}
+          alt="Product"
+          className="w-full h-96 object-cover rounded-lg"
+        />
+        <div className="flex gap-4">
+          {product.images.map((image, index) => (
+            <img
+              key={index}
+              src={image}
+              alt={`Thumbnail ${index + 1}`}
+              onClick={() => setSelectedImage(image)}
+              className={`w-20 h-20 object-cover cursor-pointer rounded-lg border-2 ${
+                selectedImage === image ? 'border-indigo-500' : 'border-transparent'
+              }`}
+            />
+          ))}
+        </div>
+      </div>
 
-  useEffect(() => {
-    fetchProductData();
-  }, [productId])
+      {/* Right Section: Product Details */}
+      <div className="w-full lg:w-1/2">
+        <h1 className="text-3xl font-bold">{product.title}</h1>
+        <p className="text-xl font-semibold mt-2">${product.price}</p>
+        <div className="flex items-center mt-2">
+          <span className="text-yellow-500 text-xl">⭐⭐⭐⭐</span>
+        </div>
+        <p className="mt-4 text-gray-600">{product.description}</p>
 
-  return productData ? (
-    <div className='border-t-2 pt-10 transition-opacity ease-in dration-500 opacity-100'>
-      
-      {/* Product Data */}
-      <div className='flex flex-row gap-12 sm:gap-12 sm:flex-row:'>
-
-      {/* Product images Left */}
-      <div className='flex flex-col-reverse gap-1 sm:flex-row'>
-          <div className='flex sm:flex-col overflow-x-auto sm:overflow-y-scroll justify-between sm:justify-normal sm:w-[18.7%] w-full'>
-             {
-              productData.image.map((item,index)=>(
-                <img onClick={()=>setImage(item)} src={item} key={index} className='w-[24%] sm:w-full sm:mb-3 flex-shrink-0 cursor-pointer' alt="" />
-              ))
-             }
+        {/* Color Selector */}
+        <div className="mt-6">
+          <h4 className="font-medium">Color</h4>
+          <div className="flex items-center gap-4 mt-2">
+            {product.colors.map((color, index) => (
+              <button
+                key={index}
+                onClick={() => setSelectedColor(color)}
+                className={`w-10 h-10 rounded-full border-2 ${
+                  selectedColor === color ? 'border-indigo-500' : 'border-gray-300'
+                }`}
+                style={{ backgroundColor: color }}
+              />
+            ))}
           </div>
-          <div className='w-full sm:w-[80%]'>
-            <img src={image} className='w-full h-auto' alt="" />
-          </div>
-      </div>               
+        </div>
 
-        {/* Product Details Right */} 
+        {/* Add to Bag Button */}
+        <button className="mt-6 bg-indigo-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-indigo-700">
+          Add to bag
+        </button>
 
-        <div className='flex-2'>
-          <h1 className='font-medium text-2xl mt-2'>{productData.name}</h1>
-          <div className='flex items-center gap-1 mt-2'>
-            <img src={assets.star_icon} alt="" className='w-3 5' />
-            <img src={assets.star_icon} alt="" className='w-3 5' />
-            <img src={assets.star_icon} alt="" className='w-3 5' />
-            <img src={assets.star_icon} alt="" className='w-3 5' />
-            <img src={assets.star_dull_icon} alt="" className='w-3 5' />
-          </div>
+        {/* Accordion Sections */}
+        <div className="mt-8 space-y-4">
+          <Accordion title="Features">
+            Durable canvas construction, convertible straps.
+          </Accordion>
+          <Accordion title="Care">Wipe clean with a damp cloth.</Accordion>
+          <Accordion title="Shipping">Free standard shipping on all orders.</Accordion>
+          <Accordion title="Returns">30-day return policy.</Accordion>
         </div>
       </div>
     </div>
-  ) : 
-  <div className='opacity-0'></div>
-}
+  );
+};
 
-export default Product
+const Accordion = ({ title, children }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex justify-between items-center py-2 text-lg font-medium border-b-2"
+      >
+        {title}
+        <span>{isOpen ? '-' : '+'}</span>
+      </button>
+      {isOpen && <div className="mt-2 text-gray-600">{children}</div>}
+    </div>
+  );
+};
+
+export default Product;
